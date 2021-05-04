@@ -7,6 +7,7 @@
   --soft-violet: hsl(277, 64%, 61%); /* accent */
   --slight-transparent-white: hsla(0, 0%, 100%, 0.75); /* main paragraph */
   --translucent-white: hsla(0, 0%, 100%, 0.6); /* stat headings */
+
 }
 
 html {
@@ -25,12 +26,15 @@ body {
 
   min-height: 889px;
   text-align: center;
+  background-color: hsl(233, 47%, 7%);
   background-color: var(--dark-blue);
   font-family: "Inter", sans-serif;
+  color: hsla(0, 0%, 100%, 0.75);
   color: var(--slight-transparent-white);
 }
 
 main.card {
+  background-color: hsl(244, 38%, 16%);
   background-color: var(--dark-desaturated-blue);
   height: 88%;
   width: 325px;
@@ -39,9 +43,10 @@ main.card {
 
   transition: transform 0.2s ease-in-out;
 }
-main.card:hover {
-  transform: scale(1.02);
-}
+
+  main.card:hover {
+    transform: scale(1.02);
+  }
 
 .img-section {
   background-color: cyan;
@@ -53,44 +58,43 @@ main.card:hover {
   background-size: cover;
   position: relative;
 }
-.img-section::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: hsla(273, 100%, 50%, 0.4);
-  background-color: hsla(276, 81%, 47%, 0.561);
-  /* background-color: hsl(276deg, 93%, 56%, 0.56); */
-  filter: brightness(85%) saturate(96%) contrast(107%);
-  filter: brightness(76%) saturate(81%) contrast(110%);
-  /* filter: brightness(85%) saturate(73%) contrast(123%); */
-  z-index: 99;
+  .img-section::after,
+  .img-section::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .img-section::before { /*  OVERLAY */
+    background-color: hsla(276, 81%, 47%, 1);
+    /* filter: brightness(76%) saturate(81%) contrast(110%); */
+    filter: brightness(76%) saturate(81%) contrast(110%);
+    z-index: 100;
+  }
 
-  /* background-color: hsl(277, 64%, 61%); */
-  /*
-    hsl(276deg 93% 56% / 56%);
-    filter: brightness(85%) saturate(73%) contrast(123%);
+  .img-section::after{ /*  FILTER */
+    background-color: hsla(276, 81%, 47%, 0.561);
+    filter: brightness(76%) saturate(81%) contrast(110%);
+    z-index: 99;
+  }
 
-    brightness(79%) saturate(83%) contrast(113%)
-    brightness(76%) saturate(81%) contrast(110%)
-    filter: brightness(85%) saturate(96%) contrast(107%);
-    brightness(85%) saturate(96%) contrast(107%) drop-shadow(0px 0px 0px hsla(340,123,163%,1)) 
-  */
-}
 .content-section {
   background-color: transparent;
   padding: 2rem;
 }
+
 .stats-area {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   position: relative;
 }
-h1 {
+
+h1.title {
   /* line-height: 2rem; */
   font-size: 1.9rem;
   font-family: "Inter", sans-serif;
@@ -98,42 +102,42 @@ h1 {
   margin-top: 8.5px;
   color: white;
 }
+
+p.subtitle {
+  line-height: 1.7rem;
+}
+
 .violet {
   color: #aa5cdb;
 }
 
 .stats {
   color: white;
-  /* border: 1px solid rgb(206, 126, 126); */
   margin-bottom: 0;
 }
 
-.stats-containers {
-  /* border: 1px solid rgb(132, 170, 96); */
-}
-p {
-  line-height: 1.7rem;
-}
 
-h5 {
+h5.stat-name {
   font-weight: normal;
   text-transform: uppercase;
+  color: hsla(0, 0%, 100%, 0.6);
   color: var(--translucent-white);
-  /* border: 1px solid rgb(121, 101, 211); */
   margin-bottom: 0.7rem;
   margin-top: 0.6rem;
   font-size: 0.82rem;
   letter-spacing: 1px;
   font-family: "Lexend Deca", sans-serif;
   font-size: 0.74rem;
+
 }
 
-h5.queries {
+h5.stat-name.queries {
   margin-bottom: 0;
 }
 
+
 /* RESPONSIVE - DESKTOP*/
-@media (min-width: 990px) {
+@media (min-width: 1000px) {
   body {
     text-align: left;
     min-height: 97vh;
@@ -141,7 +145,7 @@ h5.queries {
   main.card {
     width: 80%;
     height: 60%;
-    height: clamp(325px, 64%, 1000px);
+    height: clamp(390px, 64%, 1000px);
     max-width: 1440px;
     max-height: 580px;
 
@@ -150,12 +154,12 @@ h5.queries {
     border-radius: 9px;
     box-shadow: 6px 7px 20px rgba(12, 12, 12, 0.507);
   }
-  h1 {
+  h1.title {
     font-size: 2.15rem;
     margin-bottom: 0px;
     margin-top: 1.496%;
   }
-  p {
+  p.subtitle {
     line-height: 1.6rem;
     font-size: 0.94rem;
     padding-right: 10%;
@@ -182,10 +186,12 @@ h5.queries {
   .stats {
     font-size: 1.4rem;
   }
+
+
 }
 
 /* TABLET */
-@media (min-width: 520px) and (max-width: 989px) and (min-height: 600px) {
+@media (min-width: 520px) and (max-width: 999px) and (min-height: 600px) {
   main.card {
     max-width: 500px;
     width: 80%;
@@ -201,7 +207,7 @@ h5.queries {
     display: flex;
     flex-direction: column;
   }
-  h1 {
+  h1.title {
     padding-top: 1.6rem;
   }
   .stats-area {
@@ -212,16 +218,20 @@ h5.queries {
 /* SELECTION STYLES*/
 
 ::selection {
+  color: hsla(0, 0%, 100%, 0.75);
   color: var(--slight-transparent-white);
-  background-color: hsl(233, 47%, 7%, 0.4);
+  background-color: hsla(233, 49%, 7%, 0.4);
 }
 
-h1::selection,
+h1.title::selection,
 .stats::selection {
+  color: hsl(277, 64%, 61%);
   color: var(--soft-violet);
 }
 
-h1 > span::selection,
-h5::selection {
+h1.title > span::selection,
+h5.stat-name::selection {
   color: white;
 }
+
+
