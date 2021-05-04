@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Stats preview card component</title>
-  <link rel="stylesheet" href="Style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-</head>
-<body>
+    <title>Frontend Mentor | Stats preview card component</title>
+    <link rel="stylesheet" href="Style/style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <section class="img-section"></section>
 
-  <main>
-    <section class="img-section"></section>
-  
-    <section class="content-section">
-
-        <h1 class="title">Get <span style="color:var(--soft-violet)">insights</span> that help your business grow.</h1>
-
+      <section class="content-section">
+        <h1 class="title">
+          Get <span class="violet">insights</span> that help your business grow.
+        </h1>
         <p class="subtitle">
-            Discover the benefits of data analytics and make better decisions 
-            regarding revenue, customer experience, and overall efficiency.
+          Discover the benefits of data analytics and make better decisions
+          regarding revenue, customer experience, and overall efficiency.
         </p>
 
-        <div class="all-stats-container">
-            <div class="company__stats-container stats-containers">   <h2 class="company-stats stats">   10k+ </h2> <h5>companies</h5> </div>
-            <div class="templates__stats-container stats-containers"> <h2 class="templates-stats stats"> 314  </h2> <h5>templates</h5> </div>
-            <div class="query__stats-container stats-containers">     <h2 class="query-stats stats">     12M+ </h2> <h5 class="queries">queries  </h5> </div>
+        <div class="stats-area">
+          <div class="stats-containers">
+            <h2 class="stats">10k+</h2>
+            <h5 class="stat-name">companies</h5>
+          </div>
+          <div class="stats-containers">
+            <h2 class="stats">314</h2>
+            <h5 class="stat-name">templates</h5>
+          </div>
+          <div class="stats-containers">
+            <h2 class="stats">12M+</h2>
+            <h5 class="queries stat-name">queries</h5>
+          </div>
         </div>
-
-    </section>
-  </main>
-   
-</body>
+        <!-- stats area-->
+      </section>
+    </main>
+  </body>
 </html>
