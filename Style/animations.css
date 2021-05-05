@@ -1,53 +1,56 @@
 :root{
   --animation-delay: 500ms;
-  --animation-timing-function: ease-out;
-  --animation-duraion: 500ms;
 }
 
-h1.title,
-p.subtitle,
-h2.stats,
-h5.stat-name{
-    opacity: 0;
-    transform: translateY(-20%);
-    animation: fade-in__from-top var(--animation-duraion) var(--animation-timing-function) forwards;
-}
+@supports(animation-delay: calc(var(--animation-delay) * .5)){
+  
+  h1.title,
+  p.subtitle,
+  h2.stats,
+  h5.stat-name{
+      opacity: 0;
+      transform: translateY(-20%);
+      animation: fade-in__from-top 500ms ease-out forwards;
+  }
+  h1.title{
+      animation-delay: calc(var(--animation-delay) * .5);
+  }
+  
+  p.subtitle{
+      animation-delay: calc(var(--animation-delay) * 1.5);
+  }
+  
+  h2.stats{
+      animation-delay: calc(var(--animation-delay) * 2.5 + 100ms);
+  }
+  
+  h5.stat-name{
+      animation-delay: calc(var(--animation-delay) * 2.5 + 100ms);
+  }
 
-h1.title{
-    animation-delay: calc(var(--animation-delay) * .5);
-}
-
-p.subtitle{
-    animation-delay: calc(var(--animation-delay) * 1.5);
-}
-
-h2.stats{
-    animation-delay: calc(var(--animation-delay) * 2.5 + 100ms);
-}
-
-h5.stat-name{
-    animation-delay: calc(var(--animation-delay) * 2.5 + 100ms);
 }
 
 .img-section::before{
-    transform-origin:  left;
+    /* transform-origin:  left;
     transform: scaleX(1);
-    animation: from-right 400ms ease-out  1900ms forwards running;
-    animation: color-transition 400ms ease-out  1900ms forwards running;
+    animation: from-right 400ms ease-out  1900ms forwards running; */
+    animation: color-transition 400ms ease-out  1900ms forwards;
 }
   
 
 @media (min-width: 1000px) {
       
   .img-section::before{
-    transform-origin: bottom left;
+    /* transform-origin: bottom left;
     transform: scaleY(1);
-    animation: from-top 400ms ease-out  1900ms forwards running;
-    animation: color-transition 400ms ease-out  1900ms forwards running;
+    animation: from-top 400ms ease-out  1900ms forwards running; */
+    animation: color-transition 400ms ease-out  1900ms forwards;
   }
   
 }
 
+
+/* KEYFRAMES */
 
 @keyframes fade-in__from-top{
   from{
