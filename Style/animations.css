@@ -33,12 +33,6 @@
   animation: color-transition 400ms ease-out 1900ms forwards;
 }
 
-@media (min-width: 1000px) {
-  .img-section::before {
-    animation: color-transition 400ms ease-out 1900ms forwards;
-  }
-}
-
 /* KEYFRAMES */
 
 @keyframes fade-in__from-top {
@@ -52,19 +46,5 @@
   to {
     opacity: 1;
     transform: translateY(0%);
-  }
-}
-
-@keyframes color-transition {
-  from {
-    background-color: hsla(276, 81%, 47%, 1);
-    opacity: 1;
-  }
-  70% {
-    opacity: 0.8;
-  }
-  to {
-    background-color: rgba(0, 0, 0, 0);
-    opacity: 0;
   }
 }
