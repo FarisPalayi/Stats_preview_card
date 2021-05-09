@@ -18,6 +18,7 @@ html {
 }
 
 *,
+*::before,
 *::after {
   box-sizing: border-box;
 }
@@ -62,6 +63,7 @@ body {
   overflow: hidden;
 }
 
+  .img-section::before,
   .img-section::after {
     position: absolute;
     content: "";
@@ -71,6 +73,12 @@ body {
     inset: 0;
 
     filter: brightness(76%) saturate(81%) contrast(110%);
+  }
+
+  /*  IMAGE OVERLAY - for animation */
+  .img-section::before {
+    background-color: hsla(276, 81%, 47%, 1);
+    z-index: 100;
   }
 
   /*  IMAGE FILTER OVERLAY*/
