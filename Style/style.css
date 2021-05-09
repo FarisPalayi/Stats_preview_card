@@ -108,7 +108,7 @@ body {
 }
 
 .service-info {
-  line-height: 1.7;
+  line-height: 1.7rem;
 }
 
 .violet { /*  Helper class */
@@ -181,7 +181,7 @@ body {
   .service-info {
     padding-right: 10%;
     font-size: 0.94rem;
-    line-height: 1.6;
+    line-height: 1.6rem;
   }
 
   .stats-area {
