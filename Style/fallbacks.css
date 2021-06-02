@@ -35,10 +35,10 @@ body {
   .card {
     height: 64% !important;
     min-height: 390px !important;
-    max-height: 580px !important;
+    max-height: 480px !important;
 
     width: 80% !important;
-    max-width: 1440px !important;
+    max-width: 1140px !important;
   }
 
   .content-section {
