@@ -59,7 +59,7 @@ body {
   height: 240px;
 
   background: url(../images/image-header-mobile.jpg) center center no-repeat;
-  background-size: cover;
+  background-size: 110% 110%;
   overflow: hidden;
 }
 
